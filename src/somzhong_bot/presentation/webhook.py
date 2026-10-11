@@ -29,7 +29,7 @@ def get_webhook_service(request: Request) -> WebhookService:
 
 @router.get("/health")
 def health() -> dict[str, str]:
-    return {"status": "ok"}
+    return {"status": "มาแล้วลูกจ๋า"}
 
 
 @router.post("/callback")
