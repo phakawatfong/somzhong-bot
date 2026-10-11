@@ -12,7 +12,7 @@ def test_seed_catalog_loads_two_venues_and_map_links() -> None:
     venues = CsvVenueCatalog(DATA).all_venues()
     assert [venue.area for venue in venues] == ["saphan khwai", "ari"]
     assert all(venue.budget == "medium" for venue in venues)
-    assert all(venue.map_url.startswith("https://") for venue in venues)
+    assert all(str(venue.map_url).startswith("https://") for venue in venues)
 
 
 def test_asks_for_area_then_uses_follow_up() -> None:

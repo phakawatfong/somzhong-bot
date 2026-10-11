@@ -23,7 +23,7 @@ class LineSdkGateway:
             events = self._parser.parse(body, signature)
         except InvalidSignatureError as exc:
             raise InvalidWebhookSignature from exc
-        result: list[tuple[str, str]] = []
+        result: list[tuple[str, str, str]] = []
         for event in events:
             message = getattr(event, "message", None)
             source = getattr(event, "source", None)
