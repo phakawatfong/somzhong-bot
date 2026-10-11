@@ -19,7 +19,7 @@ class _Gateway:
 def test_health_and_webhook_dependency_injection() -> None:
     gateway = _Gateway()
     client = TestClient(create_app(gateway=gateway))
-    assert client.get("/health").json() == {"status": "ok"}
+    assert client.get("/health").json() == {"status": "มาแล้วลูกจ๋า"}
     response = client.post("/callback", headers={"x-line-signature": "valid"}, content="{}")
     assert response.status_code == 200
     assert gateway.reply[0] == "reply-token"
